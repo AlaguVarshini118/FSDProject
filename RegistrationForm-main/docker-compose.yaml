@@ -1,4 +1,3 @@
-# Remove the version attribute
 services:
   frontend:
     build:
@@ -7,14 +6,15 @@ services:
     ports:
       - "3000:80"
     volumes:
-      - ./client:/c/Project/RegistrationForm-main/client
+      - /mnt/c/Users/Raghu/Desktop/vachu_files/project/FSDProject/client:/app/client
+
     networks:
       - app-network
 
   backend:
     build:
       context: .
-      dockerfile: /c/Project/RegistrationForm-main/Dockerfile
+      dockerfile: ./server/Dockerfile
     ports:
       - "5000:5000"
     environment:
